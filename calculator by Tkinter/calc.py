@@ -6,6 +6,8 @@ import ast
 
 root = Tk()
 
+root.title("YAYA Calculator")
+
 i=0
 
 def get_num(num) :
@@ -84,7 +86,7 @@ Button(root ,text="DEL" , width=3 ,height=2 ,command= undo ).grid(row=5 , column
 
 
 
-
+root.geometry("250x200")
 
 root.mainloop()
 
