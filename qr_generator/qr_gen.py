@@ -17,6 +17,7 @@ def generate():
 
 
 root = Tk () 
+root.title("QR Generator")
 
 style = ttk.Style()
 style.configure('Custom.TEntry', foreground='black', background='lightgray')
