@@ -13,24 +13,23 @@ import random as rn
 script_path = sys.argv[0]
 
 def download_progress(stream, chunk, remaining):
-    # Calculate percentage of download completed
     total_size = stream.filesize
     bytes_downloaded = total_size - remaining
     download_percentage = (bytes_downloaded / total_size) * 100
     progress_bar['value'] = download_percentage
-    root.update_idletasks()  # Update the GUI
+    root.update_idletasks()  
 
 def download():
-    global progress_bar  # Declare progress_bar as global
+    global progress_bar  
     progress_window = Toplevel(root)
     progress_window.title("Download Progress")
     progress_window.geometry("300x100")
 
-    # Create progress bar in the pop-up window
+    
     progress_bar = ttk.Progressbar(progress_window, orient=HORIZONTAL, length=200, mode='determinate')
     progress_bar.pack(pady=10)
 
-    start_time = time.time()  # Record start time
+    start_time = time.time()  
     video_path = url_entry.get()
     file_path = path_label.cget("text")
     download_label=Label(text="Downloading.....")
@@ -47,8 +46,8 @@ def download():
 #code for mb3 
 
     video_clip.close()
-    end_time = time.time()  # Record end time
-    time_taken = end_time - start_time  # Calculate time taken for download
+    end_time = time.time()  
+    time_taken = end_time - start_time  
     progress_window.destroy()
 
     shutil.move(mp4,file_path)
